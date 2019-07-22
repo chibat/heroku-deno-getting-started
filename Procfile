@@ -1,1 +1,1 @@
-web: deno main.ts --allow-net --allow-env
+web: deno --allow-net --allow-env main.ts
