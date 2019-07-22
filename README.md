@@ -12,7 +12,7 @@ Your app should now be running on [localhost:8888](http://localhost:8888/).
 
 ## Deploying to Heroku
 ```
-$ heroku create --buildpack https://github.com/chibat/heroku-deno-buildpack.git
+$ heroku create --buildpack https://github.com/chibat/heroku-buildpack-deno.git
 $ git push heroku master
 $ heroku open
 ```
