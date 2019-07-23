@@ -8,7 +8,7 @@ $ git clone https://github.com/chibat/heroku-deno-getting-started.git
 $ cd heroku-deno-getting-started
 $ deno main.ts --allow-net --allow-env
 ```
-Your app should now be running on [localhost:8888](http://localhost:8888/).
+Your app should now be running on [localhost:8080](http://localhost:8080/).
 
 ## Deploying to Heroku
 ```
