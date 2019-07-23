@@ -1,6 +1,10 @@
 
 # heroku-deno-getting-started
 
+## Buildpack
+
+https://github.com/chibat/heroku-buildpack-deno
+
 ## Running Locally
 Make sure you have [Deno](https://deno.land/) and the [Heroku CLI](https://cli.heroku.com/) installed.
 ```
