@@ -21,9 +21,4 @@ $ git push heroku master
 $ heroku open
 ```
 
-## About listen port
-
-Use the environment variable `PORT` provided by the heroku runtime as the port number that the application listen.
-
-
 
