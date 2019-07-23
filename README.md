@@ -21,18 +21,6 @@ $ git push heroku master
 $ heroku open
 ```
 
-## Settings to download all dependencies at deployment time
-
-Create `fetch.ts` in project root directory.
-Import the source code that starts the application in `fetch.ts`.
-
-example
-```typescript
-import {} from "./main.ts";
-```
-
-The downloaded files are cached.
-
 ## About listen port
 
 Use the environment variable `PORT` provided by the heroku runtime as the port number that the application listen.
