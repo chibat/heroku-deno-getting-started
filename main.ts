@@ -1,16 +1,10 @@
 import { serve } from "https://deno.land/std@v0.12/http/server.ts";
+import * as flags from "https://deno.land/std@v0.17.0/flags/mod.ts";
 
-function getPort(): number {
-  const DEFAULT_PORT = 8080
-  for (let i = 1; i < Deno.args.length; i++) {
-    if (Deno.args[i] === '-p' && ++i < Deno.args.length) {
-      return Number(Deno.args[i]);
-    }
-  }
-  return DEFAULT_PORT;
-}
 
-const port = getPort();
+const DEFAULT_PORT = 8080;
+const argPort = flags.parse(Deno.args).port;
+const port = argPort ? Number(argPort) : DEFAULT_PORT;
 
 if (isNaN(port)) {
   console.error('Port is not number.');
