@@ -10,7 +10,7 @@ Make sure you have [Deno](https://deno.land/) and the [Heroku CLI](https://cli.h
 ```
 $ git clone https://github.com/chibat/heroku-deno-getting-started.git
 $ cd heroku-deno-getting-started
-$ deno main.ts --allow-net
+$ deno --allow-net=:8080 main.ts
 ```
 Your app should now be running on [localhost:8080](http://localhost:8080/).
 
