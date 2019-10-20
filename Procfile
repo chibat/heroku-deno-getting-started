@@ -1,1 +1,1 @@
-web: deno --allow-net=:${PORT} main.ts --port=${PORT}
+web: deno --no-prompt --allow-net=:${PORT} main.ts --port=${PORT}
