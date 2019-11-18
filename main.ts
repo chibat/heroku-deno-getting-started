@@ -12,7 +12,7 @@ if (isNaN(port)) {
 }
 
 const body = new TextEncoder().encode("Hello World\n");
-const s = serve(":" + port);
+const s = serve({port: port});
 window.onload = async () => {
   console.log("http://localhost:" + port);
   for await (const req of s) {
