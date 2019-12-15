@@ -7,16 +7,14 @@ const argPort = flags.parse(Deno.args).port;
 const port = argPort ? Number(argPort) : DEFAULT_PORT;
 
 if (isNaN(port)) {
-  console.error('Port is not number.');
+  console.error('Port is not a number.');
   Deno.exit(1);
 }
 
 const body = new TextEncoder().encode("Hello World\n");
 const s = serve({port: port});
-window.onload = async () => {
-  console.log("http://localhost:" + port);
-  for await (const req of s) {
-    req.respond({ body });
-  }
-};
+console.log("http://localhost:" + port);
+for await (const req of s) {
+  req.respond({ body });
+}
 
