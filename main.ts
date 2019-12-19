@@ -1,5 +1,5 @@
-import { serve } from "https://deno.land/std@v0.26.0/http/server.ts";
-import * as flags from "https://deno.land/std@v0.26.0/flags/mod.ts";
+import { serve } from "https://deno.land/std@v0.27.0/http/server.ts";
+import * as flags from "https://deno.land/std@v0.27.0/flags/mod.ts";
 
 
 const DEFAULT_PORT = 8080;
