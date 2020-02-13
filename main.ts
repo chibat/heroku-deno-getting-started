@@ -1,5 +1,5 @@
-import { serve } from "https://deno.land/std@v0.32.0/http/server.ts";
-import * as flags from "https://deno.land/std@v0.32.0/flags/mod.ts";
+import { serve } from "https://deno.land/std@v0.33.0/http/server.ts";
+import * as flags from "https://deno.land/std@v0.33.0/flags/mod.ts";
 
 const DEFAULT_PORT = 8080;
 const argPort = flags.parse(Deno.args).port;
@@ -13,6 +13,7 @@ if (isNaN(port)) {
 const body = new TextEncoder().encode("Hello World\n");
 const s = serve({ port: port });
 console.log("http://localhost:" + port);
+
 for await (const req of s) {
   req.respond({ body });
 }
