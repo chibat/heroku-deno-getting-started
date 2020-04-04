@@ -2,6 +2,7 @@ FROM gitpod/workspace-full
                     
 USER gitpod
 
+ENV DENO_DIR=/workspace/.deno
 RUN curl -fsSL https://deno.land/x/install/install.sh | sh
 
 # Install custom tools, runtime, etc. using apt-get
