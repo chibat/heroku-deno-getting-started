@@ -6,7 +6,7 @@ ENV DENO_DIR=/workspace/.deno
 ENV DENO_INSTALL=$HOME/.deno
 ENV PATH=$DENO_INSTALL/bin:$PATH
 
-RUN curl -fsSL https://deno.land/x/install/install.sh | sh -s v1.0.0-rc1
+RUN curl -fsSL https://deno.land/x/install/install.sh | sh -s v1.0.0-rc2
 RUN npm install heroku -g
 
 # Install custom tools, runtime, etc. using apt-get
