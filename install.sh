@@ -1,12 +1,9 @@
 #!/bin/bash -ex
 
-curl -fsSL https://deno.land/x/install/install.sh | sh
+export DENO_INSTALL=$HOME/.deno
+export PATH=$DENO_INSTALL/bin:$PATH
+curl -fsSL https://deno.land/x/install/install.sh | sh -s v1.0.0
+deno --version
 
-if [ -z "$DENO_INSTALL" ]
-then
-  deno --version
-else
-  $DENO_INSTALL/deno --version
-fi
-
+npm install heroku -g
 
