@@ -10,7 +10,7 @@ if (isNaN(port)) {
   Deno.exit(1);
 }
 
-const s = serve({ port: port, hostname: '0.0.0.0'});
+const s = serve({ port: port });
 console.log("http://localhost:" + port);
 
 for await (const req of s) {
