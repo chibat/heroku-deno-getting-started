@@ -1,5 +1,3 @@
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/chibat/heroku-deno-getting-started) 
-
 
 # heroku-deno-getting-started
 
@@ -12,7 +10,7 @@ Make sure you have [Deno](https://deno.land/) and the [Heroku CLI](https://cli.h
 ```
 $ git clone https://github.com/chibat/heroku-deno-getting-started.git
 $ cd heroku-deno-getting-started
-$ deno run --allow-net=:8080 main.ts
+$ deno run --allow-net=:8080 --config tsconfig.json --unstable --importmap import_map.json app.ts --port=8080
 ```
 Your app should now be running on [localhost:8080](http://localhost:8080/).
 
