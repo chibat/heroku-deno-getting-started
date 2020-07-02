@@ -1,10 +1,5 @@
-import {
-  Controller,
-  Get,
-  Area,
-  App,
-} from "alosaur";
-import * as flags from "std/flags/mod.ts";
+import { serve } from "https://deno.land/std@v0.58.0/http/server.ts";
+import * as flags from "https://deno.land/std@v0.58.0/flags/mod.ts";
 
 const DEFAULT_PORT = 8080;
 const argPort = flags.parse(Deno.args).port;
@@ -15,21 +10,9 @@ if (isNaN(port)) {
   Deno.exit(1);
 }
 
-@Controller()
-export class HomeController {
-  @Get()
-  text() {
-    return "Hello world";
-  }
+const s = serve({ port: port });
+console.log("http://localhost:" + port);
+
+for await (const req of s) {
+  req.respond({ body: "Hello World\n" });
 }
-
-@Area({
-  controllers: [HomeController],
-})
-export class HomeArea {}
-
-const app = new App({
-  areas: [HomeArea],
-});
-
-app.listen({ port: port });
