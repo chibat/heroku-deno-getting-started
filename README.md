@@ -23,6 +23,7 @@ $ heroku open
 
 ## more examples
 * https://github.com/chibat/heroku-deno-tsconfig-importmap-example
-* https://github.com/chibat/heroku-alephjs-example
+* https://github.com/chibat/heroku-deno-customized-build-example (Aleph.js)
+
 
 
