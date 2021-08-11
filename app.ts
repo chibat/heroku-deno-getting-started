@@ -1,18 +1,23 @@
-import { serve } from "https://deno.land/std@0.83.0/http/server.ts";
-import * as flags from "https://deno.land/std@0.83.0/flags/mod.ts";
+#!/usr/bin/env -S deno run --allow-net=:8080 --allow-env=PORT
 
 const DEFAULT_PORT = 8080;
-const argPort = flags.parse(Deno.args).port;
-const port = argPort ? Number(argPort) : DEFAULT_PORT;
+const envPort = Deno.env.get("PORT");
+const port = envPort ? Number(envPort) : DEFAULT_PORT;
 
 if (isNaN(port)) {
   console.error("Port is not a number.");
   Deno.exit(1);
 }
 
-const s = serve({ port: port });
+const listener = Deno.listen({ port });
 console.log("http://localhost:" + port);
-
-for await (const req of s) {
-  req.respond({ body: "Hello World\n" });
+for await (const conn of listener) {
+  (async () => {
+    const requests = Deno.serveHttp(conn);
+    for await (const { respondWith } of requests) {
+      respondWith(new Response("Hello world"));
+    }
+  })();
 }
+
+
