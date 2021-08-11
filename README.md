@@ -24,6 +24,7 @@ $ heroku open
 ## more examples
 * https://github.com/chibat/heroku-deno-tsconfig-importmap-example (Alosaur)
 * https://github.com/chibat/heroku-deno-customized-build-example (Aleph.js)
+* https://github.com/chibat/heroku-deno-postgres-example (PostgreSQL)
 
 
 
